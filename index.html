@@ -117,5 +117,71 @@
 				</div>
 			</div>
 		</div>
+		<script>
+	window.onscroll = function(){
+		console.log(document.body.scrollTop);
+		var scrollH = document.body.scrollTop;
+		if(scrollH > 50){
+			header.style.height = "44px";
+			header.style.position = "fixed";
+			header.style.top = "0px";
+			header.style.zIndex = "9999";
+			menu.style.left = "400px";
+			menu.style.top = "-70px";
+			logo.style.left = "0px";
+			sectionA.style.marginTop = "44px";
+		}else{
+			header.style.height = "600px";
+			header.style.position = "relative";
+			header.style.top = "0px";
+			logo.style.left = "calc(50% - 200px)";
+			menu.style.left = "calc(50% - 450px)";
+			menu.style.top = "50px";
+			sectionA.style.marginTop = "2px";
+		}
+		if(scrollH > 280){
+			titleA.style.paddingTop = "500px";
+			menuA.style.background = "orange";
+		}else{
+			titleA.style.paddingTop = "280px";
+			menuA.style.background = "black";
+		}
+		if(scrollH > 680){
+			titleB.style.paddingTop = "500px";
+			titleB.style.transform = "rotateY(180deg)";
+			menuB.style.background = "orange";
+		}else{
+			titleB.style.paddingTop = "280px";
+			titleB.style.transform = "rotateY(360deg)";
+			menuB.style.background = "white";
+		}
+		if(scrollH > 1198){
+			sectionC.style.backgroundAttachment = "fixed";
+			menuC.style.background = "orange";
+		}else{
+			sectionC.style.backgroundAttachment = "scroll";
+			menuC.style.background = "white";
+		}
+		
+		if(scrollH > 1816){
+			titleE.style.fontSize = "0.5em";
+			titleE.style.fontWeight = "100";
+			menuE.style.background = "white";
+		}else{
+			titleE.style.fontSize = "8em";
+			titleE.style.fontWeight = "800";
+			menuE.style.background = "white";
+		}
+		if(scrollH > 2400){
+			titleE.style.fontSize = "1.5em";
+			titleE.style.fontWeight = "400";
+			menuE.style.background = "white";
+		}else{
+			titleE.style.fontSize = "6em";
+			titleE.style.fontWeight = "800";
+			menuE.style.background = "white";
+		}
+	}
+</script>
 	</body>
 </html>
