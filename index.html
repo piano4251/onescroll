@@ -1,96 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Scroll Activated Animation</title>
-        <style type="text/css">
-            
-            * {
-                margin: 0;
-                padding: 0;
-            }
-            body {
-                font-family: Raleway, Arial;
-            }
-            
-            .content {
-                height: 600px;
-                background-color: #e0e0e0;
-            }
-            
-            .about {
-                max-width: 600px;
-                margin: 0 auto;
-                padding: 100px 0;
-                transform-style: preserve-3d;
-                transform: perspective(800px);
-            }
-            .about h2 {
-                text-transform: uppercase;
-                font-size: 50px;
-                font-weight: 400;
-            }
-            .about h2, .about p {
-                transition: all 0.8s ease;
-            }
-            .about.hidden h2 {
-                opacity: 0;
-                transform: translate3d(0, 0, 400px) rotateY(-40deg);
-            }
-            .about.hidden p {
-                opacity: 0;
-                transform: translate3d(0, 0, 400px) rotateY(40deg);
-            }
-            
-            
-            
-            
-        </style>
-        
-        
-    </head>
-    <body>
-        
-        
-        <div class="content"></div>
-        
-        
-        <div class="about hidden">
-            <h2>This is heading</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum massa ac ex gravida, eu pharetra lorem hendrerit. Praesent sed massa eget massa vehicula volutpat. Donec augue ligula, pretium a congue sit amet, accumsan eget risus. Sed a imperdiet mauris. Proin ac purus at justo cursus ornare id eget elit. Cras a egestas massa. Fusce libero libero, pellentesque id vehicula ut, consectetur at lacus. Vestibulum mollis erat nibh. Fusce tincidunt lectus ut orci feugiat, sit amet scelerisque diam imperdiet. Donec et magna commodo, efficitur velit vel, aliquet enim. Duis nec mollis justo. Duis pulvinar vulputate leo at aliquam.</p>
-        </div>
-    
-        
-        <div class="content"></div>
-        
-
-        
-        
-        
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script type="text/javascript">
-            
-            (function() {
-                
-                var aboutEl = $('div.about'),
-                    aboutElOffset = aboutEl.offset().top/2,
-                    documentEl = $(document);
-                
-                documentEl.on('scroll', function() {
-                    if ( documentEl.scrollTop() > aboutElOffset && aboutEl.hasClass('hidden') ) aboutEl.removeClass('hidden'); 
-                });
-                
-                
-                
-                
-                
-            })();
-            
-            
-            
-        </script>
-        
-    </body>
+	<head>
+		<style type="text/css">
+			html, body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+			}
+			.parallax {
+				height: 100%;
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+			}
+			.first {
+				background-image: url('/pic_one.jpg');
+			}
+			.second {
+				background-image: url('/pic_two.jpg');
+				height: 72%;
+			}
+			.three {
+				background-image: url('/pic_three.jpg');
+				height: 72%;
+			}
+			.four {
+				background-image: url('/pic_four.jpg');
+				height: 72%;
+			}
+			.right-heading {
+				position: absolute;
+				top: 50%;
+				right: 5%;
+				transform: translate(0%, -50%);
+				font-family: Helvetica, Arial, sans-serif;
+				color: white;
+				text-align: right;
+			}
+			.right-heading h1, .right-heading h2 {
+				font-weight: 300;
+			}
+			.right-heading h1 {
+				font-size: 400%;
+				line-height: 30%;
+			}
+			.band h1 {
+				font-family: Helvetica;
+				font-weight: 300;
+				text-align: center;
+				font-size: 275%;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+			.sub-caption {
+				background: rgba(255, 255, 255, 0.4);
+				font-family: Helvetica;
+				width: 50%;
+				padding-top: 27px;
+				padding-bottom: 27px;
+				padding-left: 20px;
+				padding-right: 20px;
+				font-size: 160%;
+				font-weight: 300;
+				position: absolute;
+				top: 50%;
+				right: 5%;
+				transform: translate(0%, -50%);
+			}
+			.left {
+				position: absolute;
+				top: 50%;
+				left: 5%;
+				transform: translate(0%, -50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parallax first">
+			<div class="right-heading">
+				<h1>Aventador</h1>
+				<h2>6.5 L539 V12 / 691-740 HP / LP-700-4</h2>
+			</div>
+		</div>
+		<div class="band">
+			<h1>6.5 L539 V12 Engine</h1>
+		</div>
+		<div class="parallax second">
+			<div class="sub-caption">
+				<div class="caption-text">
+					The Aventador's handcrafted 6.5L V12 is the heart of the beast, producing up to 740hp.
+				</div>
+			</div>
+		</div>
+		<div class="band">
+			<h1>7-speed ISR Gearbox</h1>
+		</div>
+		<div class="parallax three">
+			<div class="sub-caption left">
+				<div class="caption-text">
+					Through a unique design of flappy paddle gearbox, the Aventador can achieve blazing 50ms shifts.
+				</div>
+			</div>
+		</div>
+		<div class="band">
+			<h1>A Legend in "The Green Hell"</h1>
+		</div>
+		<div class="parallax four">
+			<div class="sub-caption">
+				<div class="caption-text">
+					The Aventador Superveloce is one of only 4 production cars to lap the N&uuml;burgring in under 7 minutes (6.59:73).
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
